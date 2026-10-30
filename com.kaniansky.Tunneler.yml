@@ -17,30 +17,34 @@ modules:
     buildsystem: simple
     sources:
       - type: file
-        url: https://github.com/kaniansky/tunneler/releases/download/v1.1.6/tunneler-1.1.6_amd64.deb
-        sha256: 0eb6ef37914a4d89a7c0a1ef575131ead29c68cda328ccfd5cfd67f94d235781
+        url: 
+          https://github.com/kaniansky/tunneler/releases/download/v1.2.4/tunneler-1.2.4_amd64.deb
+        sha256: 265ba1dbeca229e3983ab2361b605bb952e4f4f00437e941e44586349c3eb121
         dest-filename: tunneler.deb
         only-arches: [x86_64]
         x-checker-data:
           type: json
           url: https://api.github.com/repos/kaniansky/tunneler/releases/latest
           version-query: .tag_name | sub("^v"; "")
-          url-query: '"https://github.com/kaniansky/tunneler/releases/download/v" + $version + "/tunneler-" + $version + "_amd64.deb"'
+          url-query: '"https://github.com/kaniansky/tunneler/releases/download/v"
+            + $version + "/tunneler-" + $version + "_amd64.deb"'
           is-main-source: true
       - type: file
-        url: https://github.com/kaniansky/tunneler/releases/download/v1.1.6/tunneler-1.1.6_arm64.deb
-        sha256: 806f7a4e3439dfefd037c44bfcd289f0eef0a949374df238a9bfa675c0e1a868
+        url: 
+          https://github.com/kaniansky/tunneler/releases/download/v1.2.4/tunneler-1.2.4_arm64.deb
+        sha256: 503f8fc2e7658a9ea6e0398b89c110443a799091a3b3161f12cb2fbb2b314cd1
         dest-filename: tunneler.deb
         only-arches: [aarch64]
         x-checker-data:
           type: json
           url: https://api.github.com/repos/kaniansky/tunneler/releases/latest
           version-query: .tag_name | sub("^v"; "")
-          url-query: '"https://github.com/kaniansky/tunneler/releases/download/v" + $version + "/tunneler-" + $version + "_arm64.deb"'
+          url-query: '"https://github.com/kaniansky/tunneler/releases/download/v"
+            + $version + "/tunneler-" + $version + "_arm64.deb"'
       - type: git
         url: https://github.com/kaniansky/tunneler.git
-        tag: v1.1.6
-        commit: 2aab72601e98156aa4ecec1daa56e41f4f7e4745
+        tag: v1.2.4
+        commit: bb0bfa86d01f9b304e09564f54e9180767e72511
         dest: upstream
         x-checker-data:
           type: git
